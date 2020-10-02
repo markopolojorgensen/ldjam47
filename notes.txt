@@ -1,0 +1,24 @@
+
+TODO
+  project settings -> Node -> snake_case
+  project settings -> display -> window -> stretch -> 2d keep
+  input map -> wasd
+
+
+
+  logo?
+  color palette
+  music
+  sfx
+
+
+
+
+DONE
+  addons
+
+
+
+
+
+
