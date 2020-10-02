@@ -7,6 +7,14 @@ TODO
 
 
 
+post-jam
+  ldjam page: gifs, description, etc.
+  itch.io page: gifs, description, uploads, style, etc.
+  README.md on the github
+  timelapse
+  upload vods to youtube...?
+
+
 
 DONE
   addons
