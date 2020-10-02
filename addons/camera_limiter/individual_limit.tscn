@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/camera_limiter/individual_limit.gd" type="Script" id=1]
+[ext_resource path="res://addons/camera_limiter/limit_clear_lerper.gd" type="Script" id=2]
+
+[node name="individual_limit" type="Node"]
+script = ExtResource( 1 )
+direction = 0
+clear_time = 0.6
+
+[node name="limit_clear_lerper" type="Node" parent="."]
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": ""
+}
+direction = 0
+clear_time = 0.6
+
+[node name="tween" type="Tween" parent="."]
