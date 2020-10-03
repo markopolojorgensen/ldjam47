@@ -6,6 +6,66 @@ TODO
   sfx
 
 
+lasso loop
+  default option that's always on
+  other options have limited uses
+time loops
+  banish enemies to future run
+loupe -> mega loupe -> telesco(lou)pe, telescoping loupe
+  watchmaker's loupe vs jeweler's loupe
+  reveals 1/2/3 treasure(s) somewhere
+shoelace loop
+  something done to individual enemies
+  or generic tripwire trap
+loopholes -> loderunner style pits you/enemies fall into
+loop-the-loop / loop the loupe
+  makes enemies go in circles
+  long range, straight line?
+  crazy syringe?
+gravity well / orbital loop
+  medium range pick-a-spot spawn
+snare loop trap
+disco ball loop?
+  multiple illusion trick
+throw something/someone for a loop
+
+this mortal coil
+
+dungeon: big ring / circle / loop you are trying to escape
+player: trying to escape
+  there's enemies & obstacles that must be overcome
+
+agency: choices
+  combat / stealth choice
+    choose every time you find enemies
+  ability choices
+    choose every time you gain access to a new ability
+      every time you clear a loop?
+  permanent upgrades
+    choose every time you finish a run assuming you have money
+    purchase as many as can be afforded
+relatedness:
+  enemies are cute / fun to fight
+  player is endearing
+competence:
+  enemies/obstacles should start out very easy to overcome and get progressively more difficult
+  long term growth:
+    permanent upgrades
+      abilities can become more powerful
+      increase player stats?
+        health
+        speed
+        number of ability slots
+
+
+challenges/bonus currency for achievement-like challenges
+  randomly pick three per run
+
+top down roguelike where you're trying to break a loop you are stuck in
+  the loop is a roguelike
+
+
+
 
 post-jam
   ldjam page: gifs, description, etc.

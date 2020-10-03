@@ -1,0 +1,81 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://addons/movement/top_down_movement.gd" type="Script" id=1]
+[ext_resource path="res://addons/aggro/aggro.gd" type="Script" id=2]
+[ext_resource path="res://external/enemies/enemy_a_idle_03.png" type="Texture" id=3]
+[ext_resource path="res://external/enemies/enemy_a_idle_13.png" type="Texture" id=4]
+[ext_resource path="res://external/enemies/enemy_a_idle_01.png" type="Texture" id=5]
+[ext_resource path="res://external/enemies/enemy_a_idle_12.png" type="Texture" id=6]
+[ext_resource path="res://external/enemies/enemy_a_idle_19.png" type="Texture" id=7]
+[ext_resource path="res://external/enemies/enemy_a_idle_04.png" type="Texture" id=8]
+[ext_resource path="res://external/enemies/enemy_a_idle_06.png" type="Texture" id=9]
+[ext_resource path="res://external/enemies/enemy_a_idle_05.png" type="Texture" id=10]
+[ext_resource path="res://external/enemies/enemy_a_idle_00.png" type="Texture" id=11]
+[ext_resource path="res://external/enemies/enemy_a_idle_14.png" type="Texture" id=12]
+[ext_resource path="res://external/enemies/enemy_a_idle_08.png" type="Texture" id=13]
+[ext_resource path="res://external/enemies/enemy_a_idle_10.png" type="Texture" id=14]
+[ext_resource path="res://external/enemies/enemy_a_idle_09.png" type="Texture" id=15]
+[ext_resource path="res://external/enemies/enemy_a_idle_17.png" type="Texture" id=16]
+[ext_resource path="res://external/enemies/enemy_a_idle_18.png" type="Texture" id=17]
+[ext_resource path="res://external/enemies/enemy_a_idle_16.png" type="Texture" id=18]
+[ext_resource path="res://external/enemies/enemy_a_idle_07.png" type="Texture" id=19]
+[ext_resource path="res://external/enemies/enemy_a_idle_11.png" type="Texture" id=20]
+[ext_resource path="res://external/enemies/enemy_a_idle_15.png" type="Texture" id=21]
+[ext_resource path="res://external/enemies/enemy_a_idle_02.png" type="Texture" id=22]
+[ext_resource path="res://enemies/enemy_a.gd" type="Script" id=23]
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 0.7
+bounce = 0.5
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 5 ), ExtResource( 22 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 19 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 20 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 12 ), ExtResource( 21 ), ExtResource( 18 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 30.0
+} ]
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 300.0
+
+[node name="enemy_a" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 7
+mode = 2
+physics_material_override = SubResource( 1 )
+can_sleep = false
+linear_damp = 0.0
+script = ExtResource( 23 )
+
+[node name="animated_sprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 4, 4 )
+frames = SubResource( 3 )
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="."]
+shape = SubResource( 4 )
+
+[node name="TopDownMovement" type="Node" parent="."]
+script = ExtResource( 1 )
+body_path = NodePath("..")
+direction_path = NodePath("..")
+acceleration = 3000.0
+default_max_speed = 300.0
+
+[node name="aggro" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 2 )
+raycast_path = NodePath("../aggro_ray")
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="aggro"]
+shape = SubResource( 5 )
+
+[node name="aggro_ray" type="RayCast2D" parent="."]
+enabled = true
+collision_mask = 3
+[connection signal="aggro" from="aggro" to="." method="_on_Aggro_aggro"]
+[connection signal="aggro_lost" from="aggro" to="." method="_on_Aggro_aggro_lost"]

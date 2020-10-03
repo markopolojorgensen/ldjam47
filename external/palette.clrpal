@@ -1,0 +1,309 @@
+COLORTOOL v1.0
+SECTION PALETTE 271
+#0f051a #190721 #1a0921 #140829 #2a092d #2b0e2c #150c3b #3b1733 #3d0c36 #4b2238 #4e1038 #611536 #5d303e #761c2f #714244 #8d2525 #865f56 #a44a31 #9c826f #bd7742 #b4a68b #d7ab59 #ccc9ab #f2e279 #e2e5cf #93f291 #73dd8f #5ac896 #46b39e #36979e #296b89 #1f4575 #172761 #11114e
+SECTION DOCUMENT 4780
+{
+ "id": "16016815142388945607",
+ "filepath": "/home/mark/fuel/data/godot/ldjams/LDJAM47/external/palette.clrpal",
+ "settings": {
+  "snap_to_grid": true,
+  "grid_size": {
+   "_t": "Vector2",
+   "value": [
+    16,
+    16
+   ]
+  },
+  "draw_grid": false,
+  "zoom": 0,
+  "scroll": {
+   "_t": "Vector2",
+   "value": [
+    0,
+    6.5
+   ]
+  },
+  "old_path_root": "/home/mark/fuel/data/godot/ldjams/LDJAM47/external"
+ },
+ "objects": [
+  {
+   "_t": "ColorShard",
+   "_v": 1,
+   "id": "Clr0001",
+   "color": {
+    "_t": "Vector3",
+    "value": [
+     0.729857,
+     0.845554,
+     0.010023
+    ]
+   },
+   "color_space": "Linear HSV",
+   "label": "",
+   "position": {
+    "_t": "Vector2",
+    "value": [
+     -87,
+     -55
+    ]
+   },
+   "index": 0,
+   "locked_index": false
+  },
+  {
+   "_t": "ColorShard",
+   "_v": 1,
+   "id": "Clr0002",
+   "color": {
+    "_t": "Vector3",
+    "value": [
+     0.135948,
+     0.78469,
+     0.890005
+    ]
+   },
+   "color_space": "Linear HSV",
+   "label": "",
+   "position": {
+    "_t": "Vector2",
+    "value": [
+     -167,
+     137
+    ]
+   },
+   "index": 0,
+   "locked_index": false
+  },
+  {
+   "_t": "ColorRamp",
+   "_v": 2,
+   "id": "Ramp0003",
+   "from": "Clr0001",
+   "to": "Clr0002",
+   "steps": 10,
+   "color_space": "HSV",
+   "label": "",
+   "locked_index": false,
+   "index": 0,
+   "flipped": false,
+   "gamma": 1.4,
+   "curves": [
+    {
+     "_t": "CurveShape",
+     "_v": 0,
+     "type": 1,
+     "exponent": 1,
+     "threshold": 0.5,
+     "amplitude": 0.2,
+     "frequency": 3,
+     "offset_start": 0,
+     "offset_end": 0,
+     "mapping": [
+      0,
+      1
+     ]
+    },
+    {
+     "_t": "CurveShape",
+     "_v": 0,
+     "type": 1,
+     "exponent": 3.51,
+     "threshold": 0.5,
+     "amplitude": 0.2,
+     "frequency": 3,
+     "offset_start": 0,
+     "offset_end": 0,
+     "mapping": [
+      0,
+      1
+     ]
+    },
+    {
+     "_t": "CurveShape",
+     "_v": 0,
+     "type": 1,
+     "exponent": 1,
+     "threshold": 0.5,
+     "amplitude": 0.2,
+     "frequency": 3,
+     "offset_start": 0,
+     "offset_end": 0,
+     "mapping": [
+      0,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "_t": "ColorShard",
+   "_v": 1,
+   "id": "Clr0004",
+   "color": {
+    "_t": "Vector3",
+    "value": [
+     0.331414,
+     0.680174,
+     0.890005
+    ]
+   },
+   "color_space": "Linear HSV",
+   "label": "",
+   "position": {
+    "_t": "Vector2",
+    "value": [
+     -87,
+     137
+    ]
+   },
+   "index": 0,
+   "locked_index": false
+  },
+  {
+   "_t": "ColorRamp",
+   "_v": 2,
+   "id": "Ramp0005",
+   "from": "Clr0001",
+   "to": "Clr0004",
+   "steps": 10,
+   "color_space": "HSV",
+   "label": "",
+   "locked_index": false,
+   "index": 0,
+   "flipped": false,
+   "gamma": 1.4,
+   "curves": [
+    {
+     "_t": "CurveShape",
+     "_v": 0,
+     "type": 1,
+     "exponent": 1.26,
+     "threshold": 0.5,
+     "amplitude": 0.2,
+     "frequency": 3,
+     "offset_start": 0,
+     "offset_end": 0,
+     "mapping": [
+      0,
+      1
+     ]
+    },
+    {
+     "_t": "CurveShape",
+     "_v": 0,
+     "type": 1,
+     "exponent": 2.28,
+     "threshold": 0.5,
+     "amplitude": 0.2,
+     "frequency": 3,
+     "offset_start": 0,
+     "offset_end": 0,
+     "mapping": [
+      0,
+      1
+     ]
+    },
+    {
+     "_t": "CurveShape",
+     "_v": 0,
+     "type": 1,
+     "exponent": 0.78,
+     "threshold": 0.5,
+     "amplitude": 0.2,
+     "frequency": 3,
+     "offset_start": 0,
+     "offset_end": 0,
+     "mapping": [
+      0,
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "_t": "ColorShard",
+   "_v": 1,
+   "id": "Clr0006",
+   "color": {
+    "_t": "Vector3",
+    "value": [
+     0.196054,
+     0.211447,
+     0.787412
+    ]
+   },
+   "color_space": "Linear HSV",
+   "label": "",
+   "position": {
+    "_t": "Vector2",
+    "value": [
+     -7,
+     137
+    ]
+   },
+   "index": 0,
+   "locked_index": false
+  },
+  {
+   "_t": "ColorRamp",
+   "_v": 2,
+   "id": "Ramp0007",
+   "from": "Clr0001",
+   "to": "Clr0006",
+   "steps": 10,
+   "color_space": "HSV",
+   "label": "",
+   "locked_index": false,
+   "index": 0,
+   "flipped": false,
+   "gamma": 1.4,
+   "curves": [
+    {
+     "_t": "CurveShape",
+     "_v": 0,
+     "type": 1,
+     "exponent": 1,
+     "threshold": 0.5,
+     "amplitude": 0.2,
+     "frequency": 3,
+     "offset_start": 0,
+     "offset_end": 0,
+     "mapping": [
+      0,
+      1
+     ]
+    },
+    {
+     "_t": "CurveShape",
+     "_v": 0,
+     "type": 1,
+     "exponent": 1,
+     "threshold": 0.5,
+     "amplitude": 0.2,
+     "frequency": 3,
+     "offset_start": 0,
+     "offset_end": 0,
+     "mapping": [
+      0,
+      1
+     ]
+    },
+    {
+     "_t": "CurveShape",
+     "_v": 0,
+     "type": 1,
+     "exponent": 1,
+     "threshold": 0.5,
+     "amplitude": 0.2,
+     "frequency": 3,
+     "offset_start": 0,
+     "offset_end": 0,
+     "mapping": [
+      0,
+      1
+     ]
+    }
+   ]
+  }
+ ]
+}
