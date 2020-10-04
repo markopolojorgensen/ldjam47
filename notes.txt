@@ -6,18 +6,48 @@ TODO
   sfx
 
 
-ability pickups, spawns, ammunition
-upgrade store
-manager to start runs, manage transitions, music, etc.
-hud element for progression towards victory
-powerups that reset per run?
+  ability pickups
+    ability pickups need labels
+    orbital loop
 
-loopholes label that says: "loopholes"
-achievements, but every achievement is loop the loop
+  more enemy types
+    lasso enemy
+    orbital loop enemies
+    final boss enemy
+    enemies that run away from you
+
+  redo lasso
+  orbital loop should fade in or something
+  
+  ability ammunition system
+  ability hud
+  ability cooldowns
+
+  powerups
+    player speed
+    scissors / get out of jail free card
+    slow down run timer by 1%
+    number of ability slots?
+
+  upgrade store
+    increase ability spawn rates
+    unlock run-limited powerups
+    increase powerup spawn rates
+
+    increase hourglass drop rates
+
+    ability upgrades
+      lasso makes enemies go poof
+      lasso summons orbital loop when it hits enemies
+      increase orbital loop size?
+
+    increase time you start with  
+
+  manager to start runs, manage transitions, music, etc.
+
+  achievements, but every achievement is loop the loop
 
 
-player goes left to right, finishes level
-  camera goes right to left, showing "new" level
 
 rotate tiles 180, totally new tiles
 
@@ -94,6 +124,8 @@ post-jam
 
 
 DONE
+  hud element for progression towards victory
+  loopholes label that says: "loopholes"
   addons
   project settings -> Node -> snake_case
   project settings -> display -> window -> stretch -> 2d keep

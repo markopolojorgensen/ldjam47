@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://external/aseprite/ninepatches/ninepatches_00.png" type="Texture" id=1]
+[ext_resource path="res://external/aseprite/loopholes/loophole_giant.png" type="Texture" id=2]
+[ext_resource path="res://gui/wallet_overlay.gd" type="Script" id=3]
+
+[node name="wallet_overlay" type="MarginContainer"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -127.0
+margin_top = -64.0
+grow_horizontal = 0
+rect_min_size = Vector2( 64, 64 )
+mouse_filter = 2
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+custom_constants/margin_bottom = 4
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="nine_patch_rect" type="NinePatchRect" parent="."]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 123.0
+margin_bottom = 60.0
+texture = ExtResource( 1 )
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="margin_container" type="MarginContainer" parent="."]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 123.0
+margin_bottom = 60.0
+mouse_filter = 2
+custom_constants/margin_right = 4
+custom_constants/margin_left = 4
+
+[node name="h_box_container" type="HBoxContainer" parent="margin_container"]
+margin_left = 4.0
+margin_right = 115.0
+margin_bottom = 56.0
+mouse_filter = 2
+custom_constants/separation = -4
+alignment = 2
+
+[node name="label" type="Label" parent="margin_container/h_box_container"]
+margin_top = 21.0
+margin_right = 79.0
+margin_bottom = 35.0
+text = "loopholes:   "
+
+[node name="wallet" type="Label" parent="margin_container/h_box_container"]
+margin_left = 75.0
+margin_top = 21.0
+margin_right = 83.0
+margin_bottom = 35.0
+text = "0"
+
+[node name="texture_rect" type="TextureRect" parent="margin_container/h_box_container"]
+margin_left = 79.0
+margin_top = 12.0
+margin_right = 111.0
+margin_bottom = 44.0
+mouse_filter = 2
+size_flags_vertical = 4
+texture = ExtResource( 2 )
+stretch_mode = 3

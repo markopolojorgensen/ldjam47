@@ -1,0 +1,93 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://external/aseprite/ninepatches/ninepatches_00.png" type="Texture" id=1]
+[ext_resource path="res://external/aseprite/loopholes/loophole_giant.png" type="Texture" id=2]
+[ext_resource path="res://gui/purchase_box.gd" type="Script" id=3]
+
+[node name="purchase_box" type="MarginContainer"]
+margin_right = 234.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 242, 120 )
+size_flags_horizontal = 3
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+description = "Does a thing?"
+
+[node name="nine_patch_rect" type="NinePatchRect" parent="."]
+margin_right = 242.0
+margin_bottom = 120.0
+texture = ExtResource( 1 )
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="margin_container" type="MarginContainer" parent="."]
+margin_right = 242.0
+margin_bottom = 120.0
+custom_constants/margin_right = 12
+custom_constants/margin_top = 12
+custom_constants/margin_left = 12
+custom_constants/margin_bottom = 12
+
+[node name="v_box_container" type="VBoxContainer" parent="margin_container"]
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 230.0
+margin_bottom = 108.0
+
+[node name="description" type="Label" parent="margin_container/v_box_container"]
+margin_top = 16.0
+margin_right = 218.0
+margin_bottom = 30.0
+size_flags_vertical = 6
+text = "Does a thing?"
+align = 1
+
+[node name="h_box_container" type="HBoxContainer" parent="margin_container/v_box_container"]
+margin_top = 50.0
+margin_right = 218.0
+margin_bottom = 96.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="cost" type="Label" parent="margin_container/v_box_container/h_box_container"]
+margin_left = 59.0
+margin_top = 16.0
+margin_right = 83.0
+margin_bottom = 30.0
+text = "100"
+
+[node name="texture_rect" type="TextureRect" parent="margin_container/v_box_container/h_box_container"]
+margin_left = 87.0
+margin_top = 7.0
+margin_right = 119.0
+margin_bottom = 39.0
+size_flags_vertical = 4
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buy_button" type="Button" parent="margin_container/v_box_container/h_box_container"]
+margin_left = 123.0
+margin_top = 13.0
+margin_right = 159.0
+margin_bottom = 33.0
+size_flags_vertical = 4
+text = "Buy"
+
+[node name="bought" type="Label" parent="margin_container/v_box_container/h_box_container"]
+visible = false
+margin_left = 80.0
+margin_top = 9.0
+margin_right = 150.0
+margin_bottom = 23.0
+text = "Purchased!"
+align = 1
+[connection signal="pressed" from="margin_container/v_box_container/h_box_container/buy_button" to="." method="_on_buy_button_pressed"]
