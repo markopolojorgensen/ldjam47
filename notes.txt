@@ -6,6 +6,22 @@ TODO
   sfx
 
 
+ability pickups, spawns, ammunition
+upgrade store
+manager to start runs, manage transitions, music, etc.
+hud element for progression towards victory
+powerups that reset per run?
+
+loopholes label that says: "loopholes"
+achievements, but every achievement is loop the loop
+
+
+player goes left to right, finishes level
+  camera goes right to left, showing "new" level
+
+rotate tiles 180, totally new tiles
+
+
 lasso loop
   default option that's always on
   other options have limited uses
@@ -13,7 +29,7 @@ time loops
   banish enemies to future run
 loupe -> mega loupe -> telesco(lou)pe, telescoping loupe
   watchmaker's loupe vs jeweler's loupe
-  reveals 1/2/3 treasure(s) somewhere
+  reveals 1/2/3 treasure(s) somewhere?
 shoelace loop
   something done to individual enemies
   or generic tripwire trap
@@ -56,6 +72,7 @@ competence:
         health
         speed
         number of ability slots
+      increase time you start with
 
 
 challenges/bonus currency for achievement-like challenges

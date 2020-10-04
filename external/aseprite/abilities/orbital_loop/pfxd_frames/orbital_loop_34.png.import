@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/orbital_loop_34.png-5ec8e5d78b1cd111928dd142926f7241.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://external/aseprite/abilities/orbital_loop/pfxd_frames/orbital_loop_34.png"
+dest_files=[ "res://.import/orbital_loop_34.png-5ec8e5d78b1cd111928dd142926f7241.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
