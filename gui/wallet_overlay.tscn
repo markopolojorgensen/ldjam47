@@ -26,7 +26,7 @@ __meta__ = {
 [node name="nine_patch_rect" type="NinePatchRect" parent="."]
 margin_left = 4.0
 margin_top = 4.0
-margin_right = 123.0
+margin_right = 134.0
 margin_bottom = 60.0
 texture = ExtResource( 1 )
 patch_margin_left = 8
@@ -37,15 +37,15 @@ patch_margin_bottom = 8
 [node name="margin_container" type="MarginContainer" parent="."]
 margin_left = 4.0
 margin_top = 4.0
-margin_right = 123.0
+margin_right = 134.0
 margin_bottom = 60.0
 mouse_filter = 2
 custom_constants/margin_right = 4
-custom_constants/margin_left = 4
+custom_constants/margin_left = 12
 
 [node name="h_box_container" type="HBoxContainer" parent="margin_container"]
-margin_left = 4.0
-margin_right = 115.0
+margin_left = 12.0
+margin_right = 126.0
 margin_bottom = 56.0
 mouse_filter = 2
 custom_constants/separation = -4
@@ -53,21 +53,21 @@ alignment = 2
 
 [node name="label" type="Label" parent="margin_container/h_box_container"]
 margin_top = 21.0
-margin_right = 79.0
+margin_right = 82.0
 margin_bottom = 35.0
-text = "loopholes:   "
+text = "Loopholes:   "
 
 [node name="wallet" type="Label" parent="margin_container/h_box_container"]
-margin_left = 75.0
+margin_left = 78.0
 margin_top = 21.0
-margin_right = 83.0
+margin_right = 86.0
 margin_bottom = 35.0
 text = "0"
 
 [node name="texture_rect" type="TextureRect" parent="margin_container/h_box_container"]
-margin_left = 79.0
+margin_left = 82.0
 margin_top = 12.0
-margin_right = 111.0
+margin_right = 114.0
 margin_bottom = 44.0
 mouse_filter = 2
 size_flags_vertical = 4

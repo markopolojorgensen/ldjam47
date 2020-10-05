@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://loophole.tscn" type="PackedScene" id=1]
+[ext_resource path="res://external/aseprite/shoes/shoes_02.png" type="Texture" id=2]
+[ext_resource path="res://external/aseprite/shoes/shoes_01.png" type="Texture" id=3]
+[ext_resource path="res://external/aseprite/shoes/shoes_00.png" type="Texture" id=4]
+[ext_resource path="res://external/aseprite/shoes/shoes_04.png" type="Texture" id=5]
+[ext_resource path="res://external/aseprite/shoes/shoes_03.png" type="Texture" id=6]
+[ext_resource path="res://external/aseprite/shoes/shoes_06.png" type="Texture" id=7]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends RigidBody2D
+
+var target
+const pickup_scalar = 5000
+
+export(String) var resource_type = \"???\"
+
+func _ready():
+	$animated_sprite.frame = randi() % $animated_sprite.frames.get_frame_count(\"default\")
+	$animated_sprite.play()
+
+func _physics_process(delta):
+	if target:
+		var here_to_there = target.global_position - global_position
+		apply_central_impulse(here_to_there.normalized() * delta * pickup_scalar)
+
+func _on_pickup_detector_body_entered(body):
+	if not target:
+		target = body
+		collision_mask = 0
+		get_tree().call_group(\"currency\", \"currency_picked_up\", resource_type)
+		$fade.start()
+		$tween.interpolate_property(self, \"modulate\", Color(1,1,1,1), Color(1,1,1,0), 1, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
+		$tween.start()
+
+func _on_fade_timeout():
+	queue_free()
+"
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[node name="shoe_loop_pickup" instance=ExtResource( 1 )]
+script = SubResource( 1 )
+resource_type = "shoelace_loop"
+
+[node name="animated_sprite" parent="." index="0"]
+frames = SubResource( 2 )
+
+[node name="label" type="Label" parent="." index="5"]
+margin_left = -48.0
+margin_top = -32.0
+margin_right = 48.0
+margin_bottom = -16.0
+text = "Shoelace Loop"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

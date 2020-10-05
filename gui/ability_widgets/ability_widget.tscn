@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://external/aseprite/ninepatches/ninepatches_00.png" type="Texture" id=1]
+[ext_resource path="res://external/aseprite/abilities/icons_01.png" type="Texture" id=2]
+[ext_resource path="res://external/aseprite/abilities/icons_00.png" type="Texture" id=3]
+[ext_resource path="res://gui/ability_widgets/ability_widget.gd" type="Script" id=4]
+
+[node name="ability_widget" type="MarginContainer"]
+margin_right = 80.0
+margin_bottom = 72.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="nine_patch_rect" type="NinePatchRect" parent="."]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 64, 64 )
+texture = ExtResource( 1 )
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="margin_container" type="MarginContainer" parent="."]
+margin_right = 80.0
+margin_bottom = 80.0
+custom_constants/margin_right = 8
+custom_constants/margin_top = 8
+custom_constants/margin_left = 8
+custom_constants/margin_bottom = 8
+
+[node name="texture_progress" type="TextureProgress" parent="margin_container"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 72.0
+margin_bottom = 72.0
+size_flags_vertical = 4
+value = 100.0
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 3 )
+fill_mode = 4
+
+[node name="v_box_container" type="VBoxContainer" parent="margin_container"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 72.0
+margin_bottom = 72.0
+alignment = 1
+
+[node name="name" type="Label" parent="margin_container/v_box_container"]
+margin_right = 64.0
+margin_bottom = 14.0
+text = "Lasso"
+
+[node name="control" type="Control" parent="margin_container/v_box_container"]
+margin_top = 18.0
+margin_right = 64.0
+margin_bottom = 46.0
+size_flags_vertical = 3
+
+[node name="uses" type="Label" parent="margin_container/v_box_container"]
+margin_top = 50.0
+margin_right = 64.0
+margin_bottom = 64.0
+align = 2

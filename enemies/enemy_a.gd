@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+export(String, "pushy", "flee") var ai_type = "pushy"
+
 var target
 
 var about_to_poof = false
@@ -22,7 +24,10 @@ func _process(_delta):
 
 func get_intended_direction():
 	if target:
-		return target.global_position - global_position
+		if ai_type == "pushy":
+			return target.global_position - global_position
+		elif ai_type == "flee":
+			return global_position - target.global_position
 	else:
 		return Vector2()
 
@@ -40,12 +45,17 @@ func caught_by_orbital_loop():
 		
 		poof()
 
+func hit_by_shoe_loop():
+	if not about_to_poof:
+		about_to_poof = true
+		call_deferred("poof")
+
 func poof():
 	# spawn a poof
 	var inst = poof_scene.instance()
 	inst.global_position = global_position
 	inst.loophole_count = (randi() % 3) + 1
-	inst.hourglass_count = (randi() % 2) + 1
+	inst.hourglass_count = (randi() % 3) + 1
 	get_parent().add_child(inst)
 	
 	get_tree().call_group("enemy", "enemy_poofed")

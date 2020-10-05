@@ -5,23 +5,10 @@ TODO
   music
   sfx
 
-
-  ability pickups
-    ability pickups need labels
-    orbital loop
-
   more enemy types
     lasso enemy
     orbital loop enemies
     final boss enemy
-    enemies that run away from you
-
-  redo lasso
-  orbital loop should fade in or something
-  
-  ability ammunition system
-  ability hud
-  ability cooldowns
 
   powerups
     player speed
@@ -39,15 +26,19 @@ TODO
     ability upgrades
       lasso makes enemies go poof
       lasso summons orbital loop when it hits enemies
-      increase orbital loop size?
-
-    increase time you start with  
-
-  manager to start runs, manage transitions, music, etc.
-
+      
   achievements, but every achievement is loop the loop
+    loop the loupe
+    matching shoes
 
 
+  ability
+    ability itself
+    ability pickup
+      (add to spawn rotation)
+    ability cooldown manager
+    ability ammo widget
+    ability upgrades
 
 rotate tiles 180, totally new tiles
 
@@ -60,9 +51,6 @@ time loops
 loupe -> mega loupe -> telesco(lou)pe, telescoping loupe
   watchmaker's loupe vs jeweler's loupe
   reveals 1/2/3 treasure(s) somewhere?
-shoelace loop
-  something done to individual enemies
-  or generic tripwire trap
 loopholes -> loderunner style pits you/enemies fall into
 loop-the-loop / loop the loupe
   makes enemies go in circles

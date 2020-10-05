@@ -12,7 +12,7 @@
 [ext_resource path="res://loophole.gd" type="Script" id=10]
 [ext_resource path="res://external/aseprite/hourglass_07.png" type="Texture" id=11]
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 9 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ) ],
 "loop": true,
@@ -36,7 +36,7 @@ resource_type = "hourglass"
 
 [node name="animated_sprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 4, 4 )
-frames = SubResource( 4 )
+frames = SubResource( 1 )
 offset = Vector2( -0.5, 0 )
 
 [node name="collision_shape_2d" type="CollisionShape2D" parent="."]

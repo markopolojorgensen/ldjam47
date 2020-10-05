@@ -6,17 +6,30 @@ onready var time_label = get_node(time_label_path)
 export(NodePath) var victory_progress_path
 onready var victory_progress = get_node(victory_progress_path)
 
+# var time_remaining = 30
 var time_remaining = 5
 
 func _ready():
 	add_to_group("currency")
 	
+	print("active purchases:")
 	for purchase in global.active_purchases:
+		print("  " + purchase)
 		match purchase:
 			"time_increase_a":
 				time_remaining += 5
 			"time_increase_b":
 				time_remaining += 10
+			"pickup_spawn_rate":
+				$ability_spawner.increase_spawn_rate()
+			"lasso_multi":
+				global.lasso_multi = true
+			"shoe_double_trigger":
+				global.shoe_double_trigger = true
+			"third_shoe":
+				global.third_shoe = true
+			_:
+				print("unknown purchase: %s" % purchase)
 	
 
 func _unhandled_input(event):

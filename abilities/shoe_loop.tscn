@@ -1,0 +1,127 @@
+[gd_scene load_steps=77 format=2]
+
+[ext_resource path="res://external/aseprite/shoes/shoes_02.png" type="Texture" id=1]
+[ext_resource path="res://external/aseprite/shoes/shoes_01.png" type="Texture" id=2]
+[ext_resource path="res://external/aseprite/shoes/shoes_00.png" type="Texture" id=3]
+[ext_resource path="res://external/aseprite/shoes/shoes_04.png" type="Texture" id=4]
+[ext_resource path="res://external/aseprite/shoes/shoes_03.png" type="Texture" id=5]
+[ext_resource path="res://external/aseprite/shoes/shoes_06.png" type="Texture" id=6]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_40.png" type="Texture" id=7]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_37.png" type="Texture" id=8]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_61.png" type="Texture" id=9]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_35.png" type="Texture" id=10]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_06.png" type="Texture" id=11]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_28.png" type="Texture" id=12]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_49.png" type="Texture" id=13]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_42.png" type="Texture" id=14]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_31.png" type="Texture" id=15]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_22.png" type="Texture" id=16]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_48.png" type="Texture" id=17]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_14.png" type="Texture" id=18]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_02.png" type="Texture" id=19]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_34.png" type="Texture" id=20]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_62.png" type="Texture" id=21]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_21.png" type="Texture" id=22]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_32.png" type="Texture" id=23]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_52.png" type="Texture" id=24]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_58.png" type="Texture" id=25]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_41.png" type="Texture" id=26]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_01.png" type="Texture" id=27]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_39.png" type="Texture" id=28]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_47.png" type="Texture" id=29]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_23.png" type="Texture" id=30]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_44.png" type="Texture" id=31]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_65.png" type="Texture" id=32]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_51.png" type="Texture" id=33]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_56.png" type="Texture" id=34]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_00.png" type="Texture" id=35]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_55.png" type="Texture" id=36]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_33.png" type="Texture" id=37]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_64.png" type="Texture" id=38]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_09.png" type="Texture" id=39]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_26.png" type="Texture" id=40]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_46.png" type="Texture" id=41]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_20.png" type="Texture" id=42]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_11.png" type="Texture" id=43]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_43.png" type="Texture" id=44]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_12.png" type="Texture" id=45]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_50.png" type="Texture" id=46]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_27.png" type="Texture" id=47]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_03.png" type="Texture" id=48]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_36.png" type="Texture" id=49]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_45.png" type="Texture" id=50]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_38.png" type="Texture" id=51]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_30.png" type="Texture" id=52]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_05.png" type="Texture" id=53]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_16.png" type="Texture" id=54]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_07.png" type="Texture" id=55]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_08.png" type="Texture" id=56]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_60.png" type="Texture" id=57]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_17.png" type="Texture" id=58]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_15.png" type="Texture" id=59]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_10.png" type="Texture" id=60]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_18.png" type="Texture" id=61]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_13.png" type="Texture" id=62]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_63.png" type="Texture" id=63]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_04.png" type="Texture" id=64]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_57.png" type="Texture" id=65]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_24.png" type="Texture" id=66]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_54.png" type="Texture" id=67]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_53.png" type="Texture" id=68]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_19.png" type="Texture" id=69]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_59.png" type="Texture" id=70]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_29.png" type="Texture" id=71]
+[ext_resource path="res://external/aseprite/shoes/loop/shoelace_loop_25.png" type="Texture" id=72]
+[ext_resource path="res://abilities/shoe_loop.gd" type="Script" id=73]
+
+[sub_resource type="SpriteFrames" id=1]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 6 ) ],
+"loop": false,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 35 ), ExtResource( 27 ), ExtResource( 19 ), ExtResource( 48 ), ExtResource( 64 ), ExtResource( 53 ), ExtResource( 11 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 39 ), ExtResource( 60 ), ExtResource( 43 ), ExtResource( 45 ), ExtResource( 62 ), ExtResource( 18 ), ExtResource( 59 ), ExtResource( 54 ), ExtResource( 58 ), ExtResource( 61 ), ExtResource( 69 ), ExtResource( 42 ), ExtResource( 22 ), ExtResource( 16 ), ExtResource( 30 ), ExtResource( 66 ), ExtResource( 72 ), ExtResource( 40 ), ExtResource( 47 ), ExtResource( 12 ), ExtResource( 71 ), ExtResource( 52 ), ExtResource( 15 ), ExtResource( 23 ), ExtResource( 37 ), ExtResource( 20 ), ExtResource( 10 ), ExtResource( 49 ), ExtResource( 8 ), ExtResource( 51 ), ExtResource( 28 ), ExtResource( 7 ), ExtResource( 26 ), ExtResource( 14 ), ExtResource( 44 ), ExtResource( 31 ), ExtResource( 50 ), ExtResource( 41 ), ExtResource( 29 ), ExtResource( 17 ), ExtResource( 13 ), ExtResource( 46 ), ExtResource( 33 ), ExtResource( 24 ), ExtResource( 68 ), ExtResource( 67 ), ExtResource( 36 ), ExtResource( 34 ), ExtResource( 65 ), ExtResource( 25 ), ExtResource( 70 ), ExtResource( 57 ), ExtResource( 9 ), ExtResource( 21 ), ExtResource( 63 ), ExtResource( 38 ), ExtResource( 32 ) ],
+"loop": true,
+"name": "default",
+"speed": 30.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 72, 12 )
+
+[node name="shoe_loop" type="Node2D"]
+script = ExtResource( 73 )
+
+[node name="shoe_a" type="AnimatedSprite" parent="."]
+scale = Vector2( 4, 4 )
+frames = SubResource( 1 )
+
+[node name="shoe_b" type="AnimatedSprite" parent="."]
+position = Vector2( 128, 4 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 1 )
+frame = 4
+
+[node name="loop" type="AnimatedSprite" parent="."]
+position = Vector2( 64, 4 )
+scale = Vector2( 4, 4 )
+z_index = -1
+frames = SubResource( 2 )
+
+[node name="hitbox" type="Area2D" parent="."]
+position = Vector2( 64, 4 )
+collision_layer = 0
+collision_mask = 2147483652
+
+[node name="collision_shape_2d" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource( 3 )
+
+[node name="trap_timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

@@ -1,0 +1,61 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://enemies/enemy_a.tscn" type="PackedScene" id=1]
+[ext_resource path="res://external/aseprite/enemies/enemy_b_idle_02.png" type="Texture" id=2]
+[ext_resource path="res://external/aseprite/enemies/enemy_b_idle_05.png" type="Texture" id=3]
+[ext_resource path="res://external/aseprite/enemies/enemy_b_idle_00.png" type="Texture" id=4]
+[ext_resource path="res://external/aseprite/enemies/enemy_b_idle_01.png" type="Texture" id=5]
+[ext_resource path="res://external/aseprite/enemies/enemy_b_idle_04.png" type="Texture" id=6]
+[ext_resource path="res://external/aseprite/enemies/enemy_b_idle_06.png" type="Texture" id=7]
+[ext_resource path="res://external/aseprite/enemies/enemy_b_idle_07.png" type="Texture" id=8]
+[ext_resource path="res://external/aseprite/enemies/enemy_b_idle_03.png" type="Texture" id=9]
+[ext_resource path="res://external/aseprite/enemies/enemy_b_shrink_15.png" type="Texture" id=10]
+[ext_resource path="res://external/aseprite/enemies/enemy_b_shrink_12.png" type="Texture" id=11]
+[ext_resource path="res://external/aseprite/enemies/enemy_b_shrink_13.png" type="Texture" id=12]
+[ext_resource path="res://external/aseprite/enemies/enemy_b_shrink_11.png" type="Texture" id=13]
+[ext_resource path="res://external/aseprite/enemies/enemy_b_shrink_14.png" type="Texture" id=14]
+[ext_resource path="res://external/aseprite/enemies/enemy_b_shrink_16.png" type="Texture" id=15]
+[ext_resource path="res://external/aseprite/enemies/enemy_b_lassoed_09.png" type="Texture" id=16]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 10 ), ExtResource( 15 ) ],
+"loop": false,
+"name": "shrink",
+"speed": 8.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id=3]
+resource_local_to_scene = true
+radius = 192.0
+
+[node name="enemy_b" instance=ExtResource( 1 )]
+ai_type = "flee"
+
+[node name="animated_sprite" parent="." index="0"]
+frames = SubResource( 1 )
+
+[node name="lassoed" parent="." index="1"]
+texture = ExtResource( 16 )
+
+[node name="collision_shape_2d" parent="." index="2"]
+visible = true
+shape = SubResource( 2 )
+
+[node name="TopDownMovement" parent="." index="3"]
+acceleration = 2500.0
+default_max_speed = 250.0
+
+[node name="aggro" parent="." index="4"]
+visible = true
+
+[node name="collision_shape_2d" parent="aggro" index="0"]
+shape = SubResource( 3 )

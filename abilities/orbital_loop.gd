@@ -8,6 +8,9 @@ var fading = false
 
 func _ready():
 	$animated_sprite.play()
+	
+	$tween.interpolate_property(self, "modulate", Color(1,1,1,0), Color(1,1,1,1), 0.2, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
+	$tween.start()
 	# $gravity_well.collision_mask = to_hit
 
 func _physics_process(delta):
@@ -21,6 +24,7 @@ func _physics_process(delta):
 func _process(_delta):
 	if not fading and $life_time.time_left < 1:
 		fading = true
+		$tween.stop_all()
 		$tween.interpolate_property(self, "modulate", Color(1,1,1,1), Color(1,1,1,0), 1.0, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
 		$tween.start()
 

@@ -1,8 +1,15 @@
 extends Node
 
-var loopholes = 10
+# var loopholes = 0
+var loopholes = 100000000
+
+var cross_run_poofs = 15
 
 var active_purchases = []
+
+var lasso_multi = false
+var shoe_double_trigger = false
+var third_shoe = false
 
 func _ready():
 	add_to_group("currency")

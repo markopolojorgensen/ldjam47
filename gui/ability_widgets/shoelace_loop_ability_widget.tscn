@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://gui/ability_widgets/ability_widget.tscn" type="PackedScene" id=1]
+[ext_resource path="res://external/aseprite/abilities/icons_05.png" type="Texture" id=2]
+[ext_resource path="res://external/aseprite/abilities/icons_06.png" type="Texture" id=3]
+
+[node name="shoelace_loop_ability_widget" instance=ExtResource( 1 )]
+ability_name = "shoelace_loop"
+
+[node name="texture_progress" parent="margin_container" index="0"]
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 2 )
+
+[node name="name" parent="margin_container/v_box_container" index="0"]
+margin_bottom = 31.0
+text = "Shoelace
+Loop"
+
+[node name="control" parent="margin_container/v_box_container" index="1"]
+margin_top = 35.0
+
+[node name="uses" parent="margin_container/v_box_container" index="2"]
+text = "x5"

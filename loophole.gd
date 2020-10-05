@@ -17,6 +17,7 @@ func _physics_process(delta):
 func _on_pickup_detector_body_entered(body):
 	if not target:
 		target = body
+		collision_mask = 0
 		get_tree().call_group("currency", "currency_picked_up", resource_type)
 		$fade.start()
 		$tween.interpolate_property(self, "modulate", Color(1,1,1,1), Color(1,1,1,0), 1, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)

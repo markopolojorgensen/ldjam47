@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://external/aseprite/ninepatches/ninepatches_00.png" type="Texture" id=1]
 [ext_resource path="res://gui/store.gd" type="Script" id=2]
@@ -6,6 +6,10 @@
 [ext_resource path="res://gui/purchase_box.tscn" type="PackedScene" id=4]
 [ext_resource path="res://external/aseprite/ninepatches/ninepatches_01.png" type="Texture" id=5]
 [ext_resource path="res://gui/wallet_overlay.tscn" type="PackedScene" id=6]
+[ext_resource path="res://external/aseprite/abilities/hourglass_icon.png" type="Texture" id=7]
+[ext_resource path="res://external/aseprite/abilities/icons_04.png" type="Texture" id=8]
+[ext_resource path="res://external/aseprite/abilities/icons_05.png" type="Texture" id=9]
+[ext_resource path="res://external/aseprite/abilities/icons_02.png" type="Texture" id=10]
 
 [node name="store" type="CanvasLayer"]
 script = ExtResource( 2 )
@@ -108,82 +112,186 @@ margin_top = 8.0
 margin_right = 976.0
 margin_bottom = 460.0
 size_flags_vertical = 3
+scroll_horizontal_enabled = false
+scroll_vertical = 91
 
 [node name="grid_container" type="GridContainer" parent="margin_container/margin_container/v_box_container/margin_container/margin_container/scroll_container"]
+margin_top = -91.0
 margin_right = 956.0
-margin_bottom = 236.0
+margin_bottom = 624.0
 custom_constants/vseparation = -4
 custom_constants/hseparation = -4
 columns = 4
 
 [node name="purchase_box" parent="margin_container/margin_container/v_box_container/margin_container/margin_container/scroll_container/grid_container" instance=ExtResource( 4 )]
 margin_right = 242.0
+margin_bottom = 127.0
 purchase_name = "time_increase_a"
 cost = 5
 description = "Adds 5 seconds to initial
 run time."
+icon_image = ExtResource( 7 )
 
 [node name="purchase_box2" parent="margin_container/margin_container/v_box_container/margin_container/margin_container/scroll_container/grid_container" instance=ExtResource( 4 )]
 margin_left = 238.0
 margin_right = 480.0
+margin_bottom = 127.0
 purchase_name = "time_increase_a"
 cost = 10
 description = "Adds 5 seconds to initial
 run time."
+icon_image = ExtResource( 7 )
 
 [node name="purchase_box3" parent="margin_container/margin_container/v_box_container/margin_container/margin_container/scroll_container/grid_container" instance=ExtResource( 4 )]
 margin_left = 476.0
 margin_right = 718.0
+margin_bottom = 127.0
 purchase_name = "time_increase_a"
 cost = 15
 description = "Adds 5 seconds to initial
 run time."
+icon_image = ExtResource( 7 )
 
 [node name="purchase_box4" parent="margin_container/margin_container/v_box_container/margin_container/margin_container/scroll_container/grid_container" instance=ExtResource( 4 )]
 margin_left = 714.0
 margin_right = 956.0
+margin_bottom = 127.0
 purchase_name = "time_increase_a"
 cost = 20
 description = "Adds 5 seconds to initial
 run time."
+icon_image = ExtResource( 7 )
 
 [node name="purchase_box5" parent="margin_container/margin_container/v_box_container/margin_container/margin_container/scroll_container/grid_container" instance=ExtResource( 4 )]
-margin_top = 116.0
+margin_top = 123.0
 margin_right = 242.0
-margin_bottom = 236.0
+margin_bottom = 250.0
 purchase_name = "time_increase_b"
 cost = 50
 description = "Adds 10 seconds to initial
 run time."
+icon_image = ExtResource( 7 )
 
 [node name="purchase_box6" parent="margin_container/margin_container/v_box_container/margin_container/margin_container/scroll_container/grid_container" instance=ExtResource( 4 )]
 margin_left = 238.0
-margin_top = 116.0
+margin_top = 123.0
 margin_right = 480.0
-margin_bottom = 236.0
+margin_bottom = 250.0
 purchase_name = "time_increase_b"
 description = "Adds 10 seconds to initial
 run time."
+icon_image = ExtResource( 7 )
 
 [node name="purchase_box7" parent="margin_container/margin_container/v_box_container/margin_container/margin_container/scroll_container/grid_container" instance=ExtResource( 4 )]
 margin_left = 476.0
-margin_top = 116.0
+margin_top = 123.0
 margin_right = 718.0
-margin_bottom = 236.0
+margin_bottom = 250.0
 purchase_name = "time_increase_b"
 cost = 150
 description = "Adds 10 seconds to initial
 run time."
+icon_image = ExtResource( 7 )
 
 [node name="purchase_box8" parent="margin_container/margin_container/v_box_container/margin_container/margin_container/scroll_container/grid_container" instance=ExtResource( 4 )]
 margin_left = 714.0
-margin_top = 116.0
+margin_top = 123.0
 margin_right = 956.0
-margin_bottom = 236.0
+margin_bottom = 250.0
 purchase_name = "time_increase_b"
 cost = 200
 description = "Adds 10 seconds to initial
 run time."
+icon_image = ExtResource( 7 )
+
+[node name="purchase_box9" parent="margin_container/margin_container/v_box_container/margin_container/margin_container/scroll_container/grid_container" instance=ExtResource( 4 )]
+margin_top = 246.0
+margin_right = 242.0
+margin_bottom = 405.0
+purchase_name = "pickup_spawn_rate"
+description = "Special Abilities spawn 
+more often"
+icon_image = ExtResource( 8 )
+
+[node name="purchase_box10" parent="margin_container/margin_container/v_box_container/margin_container/margin_container/scroll_container/grid_container" instance=ExtResource( 4 )]
+margin_left = 238.0
+margin_top = 246.0
+margin_right = 480.0
+margin_bottom = 405.0
+purchase_name = "pickup_spawn_rate"
+cost = 200
+description = "Special Abilities spawn 
+more often"
+icon_image = ExtResource( 8 )
+
+[node name="purchase_box11" parent="margin_container/margin_container/v_box_container/margin_container/margin_container/scroll_container/grid_container" instance=ExtResource( 4 )]
+margin_left = 476.0
+margin_top = 246.0
+margin_right = 718.0
+margin_bottom = 405.0
+purchase_name = "lasso_multi"
+cost = 50
+description = "Lasso affects multiple
+enemy loops"
+
+[node name="purchase_box14" parent="margin_container/margin_container/v_box_container/margin_container/margin_container/scroll_container/grid_container" instance=ExtResource( 4 )]
+margin_left = 714.0
+margin_top = 246.0
+margin_right = 956.0
+margin_bottom = 405.0
+purchase_name = "lasso_poof"
+cost = 400
+description = "Lasso makes enemies go poof"
+
+[node name="purchase_box12" parent="margin_container/margin_container/v_box_container/margin_container/margin_container/scroll_container/grid_container" instance=ExtResource( 4 )]
+margin_top = 401.0
+margin_right = 242.0
+margin_bottom = 560.0
+purchase_name = "shoe_double_trigger"
+description = "Shoelace Loops trigger twice
+before coming untied"
+icon_image = ExtResource( 9 )
+
+[node name="purchase_box13" parent="margin_container/margin_container/v_box_container/margin_container/margin_container/scroll_container/grid_container" instance=ExtResource( 4 )]
+margin_left = 238.0
+margin_top = 401.0
+margin_right = 480.0
+margin_bottom = 560.0
+purchase_name = "third_shoe"
+description = "Shoelace Loops gain another loop"
+icon_image = ExtResource( 9 )
+
+[node name="purchase_box15" parent="margin_container/margin_container/v_box_container/margin_container/margin_container/scroll_container/grid_container" instance=ExtResource( 4 )]
+margin_left = 476.0
+margin_top = 401.0
+margin_right = 718.0
+margin_bottom = 560.0
+purchase_name = "orbital_unlock"
+cost = 200
+description = "Unlocks Orbital Loop ability
+10% chance of spawning"
+icon_image = ExtResource( 10 )
+
+[node name="purchase_box16" parent="margin_container/margin_container/v_box_container/margin_container/margin_container/scroll_container/grid_container" instance=ExtResource( 4 )]
+margin_left = 714.0
+margin_top = 401.0
+margin_right = 956.0
+margin_bottom = 560.0
+purchase_name = "orbital_unlock_b"
+cost = 200
+description = "Increase Orbital Loop ability
+spawn chance to 20%"
+icon_image = ExtResource( 10 )
+
+[node name="purchase_box17" parent="margin_container/margin_container/v_box_container/margin_container/margin_container/scroll_container/grid_container" instance=ExtResource( 4 )]
+margin_top = 556.0
+margin_right = 242.0
+margin_bottom = 715.0
+purchase_name = "orbital_unlock"
+cost = 200
+description = "Increase Orbital Loop ability
+spawn chance to 20%"
+icon_image = ExtResource( 10 )
 
 [node name="bg" type="Sprite" parent="."]
 scale = Vector2( 4, 4 )

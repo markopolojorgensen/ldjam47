@@ -1,0 +1,33 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://external/aseprite/abilities/lasso/lasso_swing_04.png" type="Texture" id=1]
+[ext_resource path="res://external/aseprite/abilities/lasso/lasso_swing_05.png" type="Texture" id=2]
+[ext_resource path="res://external/aseprite/abilities/lasso/lasso_swing_02.png" type="Texture" id=3]
+[ext_resource path="res://external/aseprite/abilities/lasso/lasso_swing_03.png" type="Texture" id=4]
+[ext_resource path="res://external/aseprite/abilities/lasso/lasso_swing_06.png" type="Texture" id=5]
+[ext_resource path="res://external/aseprite/abilities/lasso/lasso_swing_00.png" type="Texture" id=6]
+[ext_resource path="res://external/aseprite/abilities/lasso/lasso_swing_07.png" type="Texture" id=7]
+[ext_resource path="res://external/aseprite/abilities/lasso/lasso_swing_01.png" type="Texture" id=8]
+[ext_resource path="res://external/aseprite/abilities/lasso/lasso_throw_09.png" type="Texture" id=9]
+[ext_resource path="res://abilities/lasso_swing.gd" type="Script" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "throw",
+"speed": 5.0
+} ]
+
+[node name="lasso_swing" type="Node2D"]
+script = ExtResource( 10 )
+
+[node name="animated_sprite" type="AnimatedSprite" parent="."]
+position = Vector2( -4, -28 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 1 )

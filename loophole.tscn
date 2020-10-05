@@ -11,12 +11,12 @@
 [ext_resource path="res://external/aseprite/loot_loop/loot_loop_01.png" type="Texture" id=9]
 [ext_resource path="res://loophole.gd" type="Script" id=10]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 9 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 9 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "default",
-"speed": 15.0
+"speed": 20.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
@@ -35,7 +35,7 @@ resource_type = "loophole"
 
 [node name="animated_sprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 4, 4 )
-frames = SubResource( 1 )
+frames = SubResource( 4 )
 
 [node name="collision_shape_2d" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )

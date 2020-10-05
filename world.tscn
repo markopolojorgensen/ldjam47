@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://external/aseprite/tilemap.png" type="Texture" id=1]
 [ext_resource path="res://external/aseprite/bg.png" type="Texture" id=2]
@@ -35,6 +35,17 @@
 [ext_resource path="res://external/aseprite/progress_bar_00.png" type="Texture" id=33]
 [ext_resource path="res://external/aseprite/progress_bar_02.png" type="Texture" id=34]
 [ext_resource path="res://external/aseprite/progress_bar_01.png" type="Texture" id=35]
+[ext_resource path="res://gui/ability_widgets/orbital_loop_widget.tscn" type="PackedScene" id=36]
+[ext_resource path="res://abilities/ability_manager.tscn" type="PackedScene" id=37]
+[ext_resource path="res://gui/ability_widgets/lasso_widget.tscn" type="PackedScene" id=38]
+[ext_resource path="res://ability_spawner.gd" type="Script" id=39]
+[ext_resource path="res://external/player/player_eyes_21.png" type="Texture" id=40]
+[ext_resource path="res://external/player/player_eyes_22.png" type="Texture" id=41]
+[ext_resource path="res://external/player/player_eyes_23.png" type="Texture" id=42]
+[ext_resource path="res://external/player/player_eyes_24.png" type="Texture" id=43]
+[ext_resource path="res://abilities/orbital_loop.tscn" type="PackedScene" id=44]
+[ext_resource path="res://abilities/shoe_loop.tscn" type="PackedScene" id=45]
+[ext_resource path="res://gui/ability_widgets/shoelace_loop_ability_widget.tscn" type="PackedScene" id=46]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 8, 0, 8, 0, 0, 16, 0 )
@@ -262,11 +273,29 @@ animations = [ {
 "speed": 30.0
 } ]
 
+[sub_resource type="SpriteFrames" id=27]
+animations = [ {
+"frames": [ ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 42 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 43 ) ],
+"loop": true,
+"name": "woah",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 41 ) ],
+"loop": true,
+"name": "ouch",
+"speed": 5.0
+} ]
+
 [sub_resource type="CircleShape2D" id=25]
 radius = 16.0
 
 [sub_resource type="RectangleShape2D" id=26]
-extents = Vector2( 1920, 1136 )
+extents = Vector2( 1920, 1264 )
 
 [node name="world" type="Node2D"]
 script = ExtResource( 23 )
@@ -275,7 +304,7 @@ __meta__ = {
 "_edit_vertical_guides_": [  ]
 }
 time_label_path = NodePath("hud/margin_container/margin_container/v_box_container/time")
-victory_progress_path = NodePath("hud/margin_container3/victory_progress")
+victory_progress_path = NodePath("hud/victory_progress/victory_progress")
 
 [node name="tile_map" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
@@ -305,6 +334,10 @@ to_hit = 4
 scale = Vector2( 4, 4 )
 frames = SubResource( 24 )
 
+[node name="eyes" type="AnimatedSprite" parent="player"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 27 )
+
 [node name="collision_shape_2d" type="CollisionShape2D" parent="player"]
 shape = SubResource( 25 )
 
@@ -333,6 +366,21 @@ margin_bottom = 14.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ability_managers" type="Node2D" parent="player"]
+
+[node name="lasso_ability_manager" parent="player/ability_managers" instance=ExtResource( 37 )]
+ability_name = "lasso"
+uses_per_pickup = 0
+
+[node name="orbital_loop_ability_manager" parent="player/ability_managers" instance=ExtResource( 37 )]
+ability_name = "orbital_loop"
+uses_per_pickup = 3
+ability_scene = ExtResource( 44 )
+
+[node name="shoelace_loop_ability_manager" parent="player/ability_managers" instance=ExtResource( 37 )]
+ability_name = "shoelace_loop"
+ability_scene = ExtResource( 45 )
 
 [node name="enemy_spawner" type="Node2D" parent="."]
 script = ExtResource( 30 )
@@ -376,6 +424,93 @@ position = Vector2( 3120.33, 1890.05 )
 [node name="enemy_spawn_point12" parent="enemy_spawner/spawns" instance=ExtResource( 31 )]
 position = Vector2( 885.273, 1912.27 )
 
+[node name="ability_spawner" type="Node2D" parent="."]
+script = ExtResource( 39 )
+
+[node name="abilities" type="Node2D" parent="ability_spawner"]
+
+[node name="spawns" type="Node2D" parent="ability_spawner"]
+
+[node name="visibility_notifier_2d" type="VisibilityNotifier2D" parent="ability_spawner/spawns"]
+position = Vector2( 648.783, 660.008 )
+rect = Rect2( -50, -50, 100, 100 )
+
+[node name="visibility_notifier_2d2" type="VisibilityNotifier2D" parent="ability_spawner/spawns"]
+position = Vector2( 1497.36, 253.676 )
+rect = Rect2( -50, -50, 100, 100 )
+
+[node name="visibility_notifier_2d3" type="VisibilityNotifier2D" parent="ability_spawner/spawns"]
+position = Vector2( 1982.27, 22.4492 )
+rect = Rect2( -50, -50, 100, 100 )
+
+[node name="visibility_notifier_2d4" type="VisibilityNotifier2D" parent="ability_spawner/spawns"]
+position = Vector2( 2653.51, 268.172 )
+rect = Rect2( -50, -50, 100, 100 )
+
+[node name="visibility_notifier_2d5" type="VisibilityNotifier2D" parent="ability_spawner/spawns"]
+position = Vector2( 3417.65, 792.579 )
+rect = Rect2( -50, -50, 100, 100 )
+
+[node name="visibility_notifier_2d6" type="VisibilityNotifier2D" parent="ability_spawner/spawns"]
+position = Vector2( 3780.24, 1161.16 )
+rect = Rect2( -50, -50, 100, 100 )
+
+[node name="visibility_notifier_2d7" type="VisibilityNotifier2D" parent="ability_spawner/spawns"]
+position = Vector2( 3381.69, 1688.57 )
+rect = Rect2( -50, -50, 100, 100 )
+
+[node name="visibility_notifier_2d8" type="VisibilityNotifier2D" parent="ability_spawner/spawns"]
+position = Vector2( 2692.47, 2084.12 )
+rect = Rect2( -50, -50, 100, 100 )
+
+[node name="visibility_notifier_2d9" type="VisibilityNotifier2D" parent="ability_spawner/spawns"]
+position = Vector2( 2048.19, 2320.85 )
+rect = Rect2( -50, -50, 100, 100 )
+
+[node name="visibility_notifier_2d10" type="VisibilityNotifier2D" parent="ability_spawner/spawns"]
+position = Vector2( 1343.99, 2081.12 )
+rect = Rect2( -50, -50, 100, 100 )
+
+[node name="visibility_notifier_2d11" type="VisibilityNotifier2D" parent="ability_spawner/spawns"]
+position = Vector2( 615.811, 1685.57 )
+rect = Rect2( -50, -50, 100, 100 )
+
+[node name="visibility_notifier_2d12" type="VisibilityNotifier2D" parent="ability_spawner/spawns"]
+position = Vector2( 184.298, 1155.17 )
+rect = Rect2( -50, -50, 100, 100 )
+
+[node name="visibility_notifier_2d13" type="VisibilityNotifier2D" parent="ability_spawner/spawns"]
+position = Vector2( 1409.91, 771.603 )
+rect = Rect2( -50, -50, 100, 100 )
+
+[node name="visibility_notifier_2d14" type="VisibilityNotifier2D" parent="ability_spawner/spawns"]
+position = Vector2( 2566.61, 750.626 )
+rect = Rect2( -50, -50, 100, 100 )
+
+[node name="visibility_notifier_2d15" type="VisibilityNotifier2D" parent="ability_spawner/spawns"]
+position = Vector2( 2611.56, 1514.76 )
+rect = Rect2( -50, -50, 100, 100 )
+
+[node name="visibility_notifier_2d16" type="VisibilityNotifier2D" parent="ability_spawner/spawns"]
+position = Vector2( 1379.95, 1526.75 )
+rect = Rect2( -50, -50, 100, 100 )
+
+[node name="visibility_notifier_2d17" type="VisibilityNotifier2D" parent="ability_spawner/spawns"]
+position = Vector2( 2012.23, 927.427 )
+rect = Rect2( -50, -50, 100, 100 )
+
+[node name="visibility_notifier_2d18" type="VisibilityNotifier2D" parent="ability_spawner/spawns"]
+position = Vector2( 2359.84, 1206.11 )
+rect = Rect2( -50, -50, 100, 100 )
+
+[node name="visibility_notifier_2d19" type="VisibilityNotifier2D" parent="ability_spawner/spawns"]
+position = Vector2( 1670.62, 1203.12 )
+rect = Rect2( -50, -50, 100, 100 )
+
+[node name="ability_spawn_interval" type="Timer" parent="ability_spawner"]
+wait_time = 10.0
+autostart = true
+
 [node name="CameraLimitArea" type="Area2D" parent="."]
 visible = false
 position = Vector2( 1984, 1152 )
@@ -387,10 +522,10 @@ script = ExtResource( 27 )
 shape = SubResource( 26 )
 
 [node name="limit_top" type="Position2D" parent="CameraLimitArea"]
-position = Vector2( 0, -1152 )
+position = Vector2( 0, -1280 )
 
 [node name="limit_bottom" type="Position2D" parent="CameraLimitArea"]
-position = Vector2( 0, 1216 )
+position = Vector2( 0, 1344 )
 
 [node name="limit_left" type="Position2D" parent="CameraLimitArea"]
 position = Vector2( -1984, 0 )
@@ -465,7 +600,7 @@ align = 1
 
 [node name="wallet_overlay" parent="hud" instance=ExtResource( 32 )]
 
-[node name="margin_container3" type="MarginContainer" parent="hud"]
+[node name="victory_progress" type="MarginContainer" parent="hud"]
 anchor_right = 1.0
 margin_bottom = 68.0
 mouse_filter = 2
@@ -476,7 +611,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="victory_progress" type="TextureProgress" parent="hud/margin_container3"]
+[node name="victory_progress" type="TextureProgress" parent="hud/victory_progress"]
 margin_left = 64.0
 margin_top = 4.0
 margin_right = 960.0
@@ -485,3 +620,61 @@ mouse_filter = 2
 texture_under = ExtResource( 33 )
 texture_over = ExtResource( 34 )
 texture_progress = ExtResource( 35 )
+
+[node name="ability_hud" type="MarginContainer" parent="hud"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -72.0
+margin_right = 72.0
+grow_vertical = 0
+custom_constants/margin_right = 0
+custom_constants/margin_top = 0
+custom_constants/margin_left = 0
+custom_constants/margin_bottom = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="nine_patch_rect3" type="NinePatchRect" parent="hud/ability_hud"]
+visible = false
+margin_right = 244.0
+margin_bottom = 88.0
+rect_min_size = Vector2( 64, 64 )
+texture = ExtResource( 29 )
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="margin_container" type="MarginContainer" parent="hud/ability_hud"]
+margin_right = 244.0
+margin_bottom = 88.0
+custom_constants/margin_right = 8
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+custom_constants/margin_bottom = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="h_box_container" type="HBoxContainer" parent="hud/ability_hud/margin_container"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 236.0
+margin_bottom = 84.0
+custom_constants/separation = -4
+
+[node name="lasso" parent="hud/ability_hud/margin_container/h_box_container" instance=ExtResource( 38 )]
+margin_bottom = 80.0
+ability_name = "lasso"
+
+[node name="orbital_loop_widget" parent="hud/ability_hud/margin_container/h_box_container" instance=ExtResource( 36 )]
+margin_left = 76.0
+margin_right = 156.0
+margin_bottom = 80.0
+
+[node name="shoelace_loop_ability_widget" parent="hud/ability_hud/margin_container/h_box_container" instance=ExtResource( 46 )]
+margin_left = 152.0
+margin_right = 232.0
+margin_bottom = 80.0
+[connection signal="timeout" from="ability_spawner/ability_spawn_interval" to="ability_spawner" method="_on_ability_spawn_interval_timeout"]
