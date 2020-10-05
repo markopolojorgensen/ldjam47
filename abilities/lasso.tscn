@@ -11,11 +11,11 @@
 [ext_resource path="res://external/aseprite/abilities/lasso/lasso_swing_01.png" type="Texture" id=9]
 [ext_resource path="res://external/aseprite/abilities/lasso/lasso_throw_09.png" type="Texture" id=10]
 
-[sub_resource type="PhysicsMaterial" id=5]
+[sub_resource type="PhysicsMaterial" id=1]
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=2]
 
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 5 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 2 ) ],
 "loop": true,
@@ -28,38 +28,39 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=4]
 radius = 13.5128
 height = 32.0
 
 [node name="lasso" type="RigidBody2D"]
 collision_layer = 0
 mode = 2
-physics_material_override = SubResource( 5 )
+physics_material_override = SubResource( 1 )
 contacts_reported = 5
 contact_monitor = true
 can_sleep = false
 linear_damp = 1.0
 script = ExtResource( 1 )
+impulse_magnitude = 500
 
 [node name="collision_shape_2d" type="CollisionShape2D" parent="."]
 position = Vector2( -24, -4 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="animated_sprite" type="AnimatedSprite" parent="."]
 position = Vector2( -4, -28 )
 scale = Vector2( 4, 4 )
-frames = SubResource( 6 )
+frames = SubResource( 3 )
 
 [node name="hitbox" type="Area2D" parent="."]
 position = Vector2( -20, 0 )
 collision_layer = 0
-collision_mask = 2147483648
+collision_mask = 2147483652
 
 [node name="collision_shape_2d" type="CollisionShape2D" parent="hitbox"]
 position = Vector2( -4, -4 )
 rotation = 0.828963
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="life_time" type="Timer" parent="."]
 one_shot = true

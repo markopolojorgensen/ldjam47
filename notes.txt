@@ -1,5 +1,12 @@
 
 TODO
+
+  tutorial
+  balance / playtest
+  sound effects
+
+
+
   logo?
   color palette
   music

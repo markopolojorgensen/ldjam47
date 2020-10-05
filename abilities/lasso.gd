@@ -1,14 +1,20 @@
 extends RigidBody2D
 
-var to_hit = 0
+# var to_hit = 0
+
+export(int) var impulse_magnitude = 300
+
+var aimer
 
 func _ready():
-	$hitbox.collision_mask = to_hit
+	# $hitbox.collision_mask = to_hit
 	$animated_sprite.play("throw")
 	$life_time.start()
-	var direction = (get_global_mouse_position() - global_position).normalized()
+	# var direction = (get_global_mouse_position() - global_position).normalized()
+	
+	var direction = aimer.get_lasso_direction()
 	apply_central_impulse(-1 * linear_velocity)
-	apply_central_impulse(direction * 300)
+	apply_central_impulse(direction * impulse_magnitude)
 
 func _on_hitbox_body_entered(body):
 	if body.has_method("hit_by_lasso"):

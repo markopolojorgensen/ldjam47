@@ -209,6 +209,7 @@ margin_top = 246.0
 margin_right = 242.0
 margin_bottom = 405.0
 purchase_name = "pickup_spawn_rate"
+cost = 50
 description = "Special Abilities spawn 
 more often"
 icon_image = ExtResource( 8 )
@@ -219,7 +220,6 @@ margin_top = 246.0
 margin_right = 480.0
 margin_bottom = 405.0
 purchase_name = "pickup_spawn_rate"
-cost = 200
 description = "Special Abilities spawn 
 more often"
 icon_image = ExtResource( 8 )
@@ -230,7 +230,7 @@ margin_top = 246.0
 margin_right = 718.0
 margin_bottom = 405.0
 purchase_name = "lasso_multi"
-cost = 50
+cost = 25
 description = "Lasso affects multiple
 enemy loops"
 
@@ -240,7 +240,7 @@ margin_top = 246.0
 margin_right = 956.0
 margin_bottom = 405.0
 purchase_name = "lasso_poof"
-cost = 400
+cost = 200
 description = "Lasso makes enemies go poof"
 
 [node name="purchase_box12" parent="margin_container/margin_container/v_box_container/margin_container/margin_container/scroll_container/grid_container" instance=ExtResource( 4 )]
@@ -248,6 +248,7 @@ margin_top = 401.0
 margin_right = 242.0
 margin_bottom = 560.0
 purchase_name = "shoe_double_trigger"
+cost = 75
 description = "Shoelace Loops trigger twice
 before coming untied"
 icon_image = ExtResource( 9 )
@@ -267,7 +268,7 @@ margin_top = 401.0
 margin_right = 718.0
 margin_bottom = 560.0
 purchase_name = "orbital_unlock"
-cost = 200
+cost = 50
 description = "Unlocks Orbital Loop ability
 10% chance of spawning"
 icon_image = ExtResource( 10 )
@@ -278,7 +279,7 @@ margin_top = 401.0
 margin_right = 956.0
 margin_bottom = 560.0
 purchase_name = "orbital_unlock_b"
-cost = 200
+cost = 50
 description = "Increase Orbital Loop ability
 spawn chance to 20%"
 icon_image = ExtResource( 10 )
@@ -288,9 +289,20 @@ margin_top = 556.0
 margin_right = 242.0
 margin_bottom = 715.0
 purchase_name = "orbital_unlock"
-cost = 200
+cost = 50
 description = "Increase Orbital Loop ability
-spawn chance to 20%"
+spawn chance to 30%"
+icon_image = ExtResource( 10 )
+
+[node name="purchase_box18" parent="margin_container/margin_container/v_box_container/margin_container/margin_container/scroll_container/grid_container" instance=ExtResource( 4 )]
+margin_left = 238.0
+margin_top = 556.0
+margin_right = 480.0
+margin_bottom = 715.0
+purchase_name = "orbital_unlock"
+cost = 50
+description = "Increase Orbital Loop ability
+spawn chance to 40%"
 icon_image = ExtResource( 10 )
 
 [node name="bg" type="Sprite" parent="."]

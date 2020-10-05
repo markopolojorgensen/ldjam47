@@ -1,0 +1,31 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://abilities/lasso_swing.tscn" type="PackedScene" id=1]
+[ext_resource path="res://external/aseprite/abilities/lasso/lasso_enemy_throw_09.png" type="Texture" id=2]
+[ext_resource path="res://external/aseprite/abilities/lasso/lasso_enemy_swing_02.png" type="Texture" id=11]
+[ext_resource path="res://external/aseprite/abilities/lasso/lasso_enemy_swing_03.png" type="Texture" id=12]
+[ext_resource path="res://external/aseprite/abilities/lasso/lasso_enemy_swing_04.png" type="Texture" id=13]
+[ext_resource path="res://external/aseprite/abilities/lasso/lasso_enemy_swing_06.png" type="Texture" id=14]
+[ext_resource path="res://external/aseprite/abilities/lasso/lasso_enemy_swing_01.png" type="Texture" id=15]
+[ext_resource path="res://external/aseprite/abilities/lasso/lasso_enemy_swing_07.png" type="Texture" id=16]
+[ext_resource path="res://external/aseprite/abilities/lasso/lasso_enemy_swing_05.png" type="Texture" id=17]
+[ext_resource path="res://external/aseprite/abilities/lasso/lasso_enemy_swing_00.png" type="Texture" id=18]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 18 ), ExtResource( 15 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 17 ), ExtResource( 14 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "default",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "throw",
+"speed": 5.0
+} ]
+
+[node name="lasso_swing_enemy" instance=ExtResource( 1 )]
+is_enemy_lasso = true
+
+[node name="animated_sprite" parent="." index="0"]
+frames = SubResource( 1 )

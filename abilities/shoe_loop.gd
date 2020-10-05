@@ -24,6 +24,10 @@ func _unhandled_input(event):
 	if not set and event.is_action_released("ability_b"):
 		get_tree().set_input_as_handled()
 		set = true
+		for body in $hitbox.get_overlapping_bodies():
+			# release on top of enemies
+			_on_hitbox_body_entered(body)
+		
 		$loop.play()
 		if global.third_shoe and not is_third_shoe:
 			var inst = shoe_loop_scene.instance()

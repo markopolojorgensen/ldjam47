@@ -64,6 +64,8 @@ physics_material_override = SubResource( 1 )
 can_sleep = false
 linear_damp = 0.0
 script = ExtResource( 23 )
+min_loopholes = 3
+max_loopholes = 5
 
 [node name="animated_sprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 4, 4 )

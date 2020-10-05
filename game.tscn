@@ -1,9 +1,30 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://game.gd" type="Script" id=1]
 [ext_resource path="res://gui/store.tscn" type="PackedScene" id=2]
+[ext_resource path="res://external/ldjam47music.ogg" type="AudioStream" id=3]
+[ext_resource path="res://external/ldjam47music2.ogg" type="AudioStream" id=4]
+[ext_resource path="res://music_manager.gd" type="Script" id=5]
+[ext_resource path="res://external/ldjam47music3.ogg" type="AudioStream" id=7]
 
 [node name="game" type="Node"]
 script = ExtResource( 1 )
 
 [node name="store" parent="." instance=ExtResource( 2 )]
+
+[node name="music_manager" type="Node" parent="."]
+script = ExtResource( 5 )
+
+[node name="game_music" type="AudioStreamPlayer" parent="music_manager"]
+stream = ExtResource( 3 )
+volume_db = -6.0
+
+[node name="store_music" type="AudioStreamPlayer" parent="music_manager"]
+stream = ExtResource( 7 )
+volume_db = -6.0
+
+[node name="tutorial_music" type="AudioStreamPlayer" parent="music_manager"]
+stream = ExtResource( 4 )
+volume_db = -6.0
+
+[node name="tween" type="Tween" parent="music_manager"]

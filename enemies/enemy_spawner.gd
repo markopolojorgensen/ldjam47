@@ -1,22 +1,28 @@
 extends Node2D
 
-const total_poof_count = 100
+const total_poof_count = 80
+# const total_poof_count = 10
+const total_poof_count_tutorial = 10
 var poof_count = 0
 var desired_enemy_count = 10
 
+var boss_present = false
+
 const enemy_a_scene = preload("res://enemies/enemy_a.tscn")
 const enemy_b_scene = preload("res://enemies/enemy_b.tscn")
+const enemy_c_scene = preload("res://enemies/enemy_c.tscn")
+const enemy_boss_scene = preload("res://enemies/enemy_boss.tscn")
 
 var mixes = [
 	{
-		"poofs": 5,
+		"poofs": 20,
 		"desired_enemy_count": 10,
 		"mix": {
 			"a": 1
 			},
 	},
 	{
-		"poofs": 5,
+		"poofs": 20,
 		"desired_enemy_count": 15,
 		"mix": {
 			"a": 0.75,
@@ -24,19 +30,46 @@ var mixes = [
 			},
 	},
 	{
-		"poofs": 5,
-		"desired_enemy_count": 20,
+		"poofs": 20,
+		"desired_enemy_count": 10,
 		"mix": {
 			"a": 0.1,
 			"b": 0.9,
 			},
 	},
 	{
-		"poofs": 5,
+		"poofs": 20,
 		"desired_enemy_count": 25,
 		"mix": {
 			"a": 0.5,
 			"b": 0.5,
+			},
+	},
+	{
+		"poofs": 20,
+		"desired_enemy_count": 30,
+		"mix": {
+			"a": 0.2,
+			"b": 0.2,
+			"c": 0.6,
+			},
+	},
+	{
+		"poofs": 20,
+		"desired_enemy_count": 15,
+		"mix": {
+			"a": 0.05,
+			"b": 0.05,
+			"c": 0.9,
+			},
+	},
+	{
+		"poofs": 2000,
+		"desired_enemy_count": 40,
+		"mix": {
+			"a": 0.4,
+			"b": 0.3,
+			"c": 0.3,
 			},
 	},
 ]
@@ -71,16 +104,19 @@ func _process(_delta):
 					final_key = key
 					break
 			
-			var inst
 			# print("    final key: %s" % final_key)
 			match final_key:
 				"a":
-					inst = enemy_a_scene.instance()
+					spawn_enemy(enemy_a_scene)
 				"b":
-					inst = enemy_b_scene.instance()
-			
-			inst.global_position = get_random_spawn()
-			$enemies.add_child(inst)
+					spawn_enemy(enemy_b_scene)
+				"c":
+					spawn_enemy(enemy_c_scene)
+
+func spawn_enemy(scene):
+	var inst = scene.instance()
+	inst.global_position = get_random_spawn()
+	$enemies.add_child(inst)
 
 func reset():
 	poof_count = 0
@@ -97,9 +133,11 @@ func get_random_spawn():
 func enemy_poofed():
 	poof_count += 1
 	global.cross_run_poofs += 1
-	if poof_count >= total_poof_count:
-		get_tree().call_group("transition", "start_ending_cutscene")
+	
+	if poof_count >= total_poof_count and not boss_present:
+		boss_present = true
+		spawn_enemy(enemy_boss_scene)
 
 func get_victory_progress():
-	return poof_count / total_poof_count * 100.0
+	return float(poof_count) / total_poof_count * 100.0
 

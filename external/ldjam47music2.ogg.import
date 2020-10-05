@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ldjam47music2.ogg-6684ba265a459f38f112b389361f8400.oggstr"
+
+[deps]
+
+source_file="res://external/ldjam47music2.ogg"
+dest_files=[ "res://.import/ldjam47music2.ogg-6684ba265a459f38f112b389361f8400.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

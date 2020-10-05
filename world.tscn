@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=2]
+[gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://external/aseprite/tilemap.png" type="Texture" id=1]
 [ext_resource path="res://external/aseprite/bg.png" type="Texture" id=2]
@@ -46,6 +46,8 @@
 [ext_resource path="res://abilities/orbital_loop.tscn" type="PackedScene" id=44]
 [ext_resource path="res://abilities/shoe_loop.tscn" type="PackedScene" id=45]
 [ext_resource path="res://gui/ability_widgets/shoelace_loop_ability_widget.tscn" type="PackedScene" id=46]
+[ext_resource path="res://external/player/player_lassoed_26.png" type="Texture" id=47]
+[ext_resource path="res://victory_progress.gd" type="Script" id=49]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 8, 0, 8, 0, 0, 16, 0 )
@@ -273,7 +275,7 @@ animations = [ {
 "speed": 30.0
 } ]
 
-[sub_resource type="SpriteFrames" id=27]
+[sub_resource type="SpriteFrames" id=25]
 animations = [ {
 "frames": [ ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 42 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ), ExtResource( 40 ) ],
 "loop": true,
@@ -291,10 +293,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=25]
+[sub_resource type="CircleShape2D" id=26]
 radius = 16.0
 
-[sub_resource type="RectangleShape2D" id=26]
+[sub_resource type="RectangleShape2D" id=27]
 extents = Vector2( 1920, 1264 )
 
 [node name="world" type="Node2D"]
@@ -305,6 +307,7 @@ __meta__ = {
 }
 time_label_path = NodePath("hud/margin_container/margin_container/v_box_container/time")
 victory_progress_path = NodePath("hud/victory_progress/victory_progress")
+time_remaining = 20
 
 [node name="tile_map" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
@@ -336,10 +339,15 @@ frames = SubResource( 24 )
 
 [node name="eyes" type="AnimatedSprite" parent="player"]
 scale = Vector2( 4, 4 )
-frames = SubResource( 27 )
+frames = SubResource( 25 )
+
+[node name="lassoed" type="Sprite" parent="player"]
+visible = false
+scale = Vector2( 4, 4 )
+texture = ExtResource( 47 )
 
 [node name="collision_shape_2d" type="CollisionShape2D" parent="player"]
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
 [node name="camera_2d" type="Camera2D" parent="player"]
 current = true
@@ -375,12 +383,16 @@ uses_per_pickup = 0
 
 [node name="orbital_loop_ability_manager" parent="player/ability_managers" instance=ExtResource( 37 )]
 ability_name = "orbital_loop"
-uses_per_pickup = 3
+uses_per_pickup = 1
 ability_scene = ExtResource( 44 )
 
 [node name="shoelace_loop_ability_manager" parent="player/ability_managers" instance=ExtResource( 37 )]
 ability_name = "shoelace_loop"
+uses_per_pickup = 3
 ability_scene = ExtResource( 45 )
+
+[node name="stun_timer" type="Timer" parent="player"]
+one_shot = true
 
 [node name="enemy_spawner" type="Node2D" parent="."]
 script = ExtResource( 30 )
@@ -508,7 +520,7 @@ position = Vector2( 1670.62, 1203.12 )
 rect = Rect2( -50, -50, 100, 100 )
 
 [node name="ability_spawn_interval" type="Timer" parent="ability_spawner"]
-wait_time = 10.0
+wait_time = 7.0
 autostart = true
 
 [node name="CameraLimitArea" type="Area2D" parent="."]
@@ -519,7 +531,7 @@ collision_mask = 2
 script = ExtResource( 27 )
 
 [node name="collision_shape_2d" type="CollisionShape2D" parent="CameraLimitArea"]
-shape = SubResource( 26 )
+shape = SubResource( 27 )
 
 [node name="limit_top" type="Position2D" parent="CameraLimitArea"]
 position = Vector2( 0, -1280 )
@@ -607,6 +619,7 @@ mouse_filter = 2
 custom_constants/margin_right = 64
 custom_constants/margin_top = 4
 custom_constants/margin_left = 64
+script = ExtResource( 49 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -617,9 +630,19 @@ margin_top = 4.0
 margin_right = 960.0
 margin_bottom = 68.0
 mouse_filter = 2
+value = 20.0
 texture_under = ExtResource( 33 )
 texture_over = ExtResource( 34 )
 texture_progress = ExtResource( 35 )
+
+[node name="label" type="Label" parent="hud/victory_progress"]
+visible = false
+margin_left = 64.0
+margin_top = 29.0
+margin_right = 960.0
+margin_bottom = 43.0
+text = "BOSS HAS ARRIVED"
+align = 1
 
 [node name="ability_hud" type="MarginContainer" parent="hud"]
 anchor_top = 1.0

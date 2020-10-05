@@ -7,7 +7,7 @@ export(NodePath) var victory_progress_path
 onready var victory_progress = get_node(victory_progress_path)
 
 # var time_remaining = 30
-var time_remaining = 5
+export(int) var time_remaining = 4
 
 func _ready():
 	add_to_group("currency")
@@ -28,6 +28,12 @@ func _ready():
 				global.shoe_double_trigger = true
 			"third_shoe":
 				global.third_shoe = true
+			"lasso_poof":
+				global.lasso_poof = true
+			"orbital_unlock":
+				$ability_spawner.increase_orbital_rate()
+			"orbital_unlock_b":
+				$ability_spawner.increase_orbital_rate()
 			_:
 				print("unknown purchase: %s" % purchase)
 	

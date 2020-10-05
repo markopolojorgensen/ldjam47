@@ -19,7 +19,8 @@ func _ready():
 
 func _integrate_forces(state):
 	$label.text = str(linear_velocity)
-	$TopDownMovement.do_movement(state)
+	if $stun_timer.is_stopped():
+		$TopDownMovement.do_movement(state)
 	
 	if $TopDownMovement/UserInputDirection.get_intended_direction().length() < 0.1:
 		# slow down
@@ -42,6 +43,9 @@ func _process(_delta):
 		$eyes.offset.y = -1
 	else:
 		$eyes.offset.y = 0
+	
+	if $stun_timer.is_stopped():
+		$lassoed.hide()
 
 func triggers_aggro():
 	return true
@@ -51,7 +55,8 @@ func _unhandled_input(event):
 		get_tree().set_input_as_handled()
 		$ability_managers/lasso_ability_manager.start()
 		lasso = lasso_scene.instance()
-		lasso.to_hit = to_hit
+		# lasso.to_hit = to_hit
+		lasso.aimer = self
 		add_child(lasso)
 	elif event.is_action_released("ability_a"):
 		get_tree().set_input_as_handled()
@@ -71,6 +76,16 @@ func _unhandled_input(event):
 		inst.global_position = get_global_mouse_position()
 		get_parent().add_child(inst)
 
+func hit_by_lasso():
+	$stun_timer.wait_time = 1
+	$stun_timer.start()
+	
+	$lassoed.show()
+	
+	$eyes.play("woah")
+	yield(get_tree().create_timer(1.5), "timeout")
+	$eyes.play("default")
+
 func caught_by_orbital_loop():
 	$eyes.play("woah")
 	yield(get_tree().create_timer(1.5), "timeout")
@@ -83,4 +98,5 @@ func currency_picked_up(name):
 		elif name == "orbital_loop" or name == "shoelace_loop":
 			ability_manager.uses = 0
 
-
+func get_lasso_direction():
+	return (get_global_mouse_position() - global_position).normalized()

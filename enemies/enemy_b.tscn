@@ -39,6 +39,10 @@ radius = 192.0
 
 [node name="enemy_b" instance=ExtResource( 1 )]
 ai_type = "flee"
+min_hourglasses = 4
+max_hourglasses = 8
+min_loopholes = 1
+max_loopholes = 3
 
 [node name="animated_sprite" parent="." index="0"]
 frames = SubResource( 1 )
@@ -53,9 +57,6 @@ shape = SubResource( 2 )
 [node name="TopDownMovement" parent="." index="3"]
 acceleration = 2500.0
 default_max_speed = 250.0
-
-[node name="aggro" parent="." index="4"]
-visible = true
 
 [node name="collision_shape_2d" parent="aggro" index="0"]
 shape = SubResource( 3 )

@@ -1,0 +1,119 @@
+[gd_scene load_steps=73 format=2]
+
+[ext_resource path="res://enemies/enemy_a.tscn" type="PackedScene" id=1]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_11.png" type="Texture" id=2]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_20.png" type="Texture" id=3]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_36.png" type="Texture" id=4]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_47.png" type="Texture" id=5]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_33.png" type="Texture" id=6]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_35.png" type="Texture" id=7]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_06.png" type="Texture" id=8]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_16.png" type="Texture" id=9]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_09.png" type="Texture" id=10]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_21.png" type="Texture" id=11]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_39.png" type="Texture" id=12]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_07.png" type="Texture" id=13]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_26.png" type="Texture" id=14]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_38.png" type="Texture" id=15]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_04.png" type="Texture" id=16]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_28.png" type="Texture" id=17]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_27.png" type="Texture" id=18]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_14.png" type="Texture" id=19]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_30.png" type="Texture" id=20]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_22.png" type="Texture" id=21]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_shrink_66.png" type="Texture" id=22]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_shrink_65.png" type="Texture" id=23]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_shrink_63.png" type="Texture" id=24]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_shrink_58.png" type="Texture" id=25]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_shrink_62.png" type="Texture" id=26]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_shrink_71.png" type="Texture" id=27]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_shrink_60.png" type="Texture" id=28]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_34.png" type="Texture" id=29]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_50.png" type="Texture" id=30]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_49.png" type="Texture" id=31]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_02.png" type="Texture" id=32]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_40.png" type="Texture" id=33]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_18.png" type="Texture" id=34]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_31.png" type="Texture" id=35]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_52.png" type="Texture" id=36]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_37.png" type="Texture" id=37]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_23.png" type="Texture" id=38]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_10.png" type="Texture" id=39]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_01.png" type="Texture" id=40]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_44.png" type="Texture" id=41]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_24.png" type="Texture" id=42]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_25.png" type="Texture" id=43]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_05.png" type="Texture" id=44]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_51.png" type="Texture" id=45]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_42.png" type="Texture" id=46]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_29.png" type="Texture" id=47]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_19.png" type="Texture" id=48]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_08.png" type="Texture" id=49]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_03.png" type="Texture" id=50]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_00.png" type="Texture" id=51]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_15.png" type="Texture" id=52]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_45.png" type="Texture" id=53]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_12.png" type="Texture" id=54]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_46.png" type="Texture" id=55]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_13.png" type="Texture" id=56]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_41.png" type="Texture" id=57]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_43.png" type="Texture" id=58]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_17.png" type="Texture" id=59]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_48.png" type="Texture" id=60]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_idle_32.png" type="Texture" id=61]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_lasso_54.png" type="Texture" id=62]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_shrink_59.png" type="Texture" id=63]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_shrink_70.png" type="Texture" id=64]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_shrink_68.png" type="Texture" id=65]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_shrink_61.png" type="Texture" id=66]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_shrink_67.png" type="Texture" id=67]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_shrink_64.png" type="Texture" id=68]
+[ext_resource path="res://external/aseprite/enemies/enemy_boss_shrink_69.png" type="Texture" id=69]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 51 ), ExtResource( 40 ), ExtResource( 32 ), ExtResource( 50 ), ExtResource( 16 ), ExtResource( 44 ), ExtResource( 8 ), ExtResource( 13 ), ExtResource( 49 ), ExtResource( 10 ), ExtResource( 39 ), ExtResource( 2 ), ExtResource( 54 ), ExtResource( 56 ), ExtResource( 19 ), ExtResource( 52 ), ExtResource( 9 ), ExtResource( 59 ), ExtResource( 34 ), ExtResource( 48 ), ExtResource( 3 ), ExtResource( 11 ), ExtResource( 21 ), ExtResource( 38 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 14 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 47 ), ExtResource( 20 ), ExtResource( 35 ), ExtResource( 61 ), ExtResource( 6 ), ExtResource( 29 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 37 ), ExtResource( 15 ), ExtResource( 12 ), ExtResource( 33 ), ExtResource( 57 ), ExtResource( 46 ), ExtResource( 58 ), ExtResource( 41 ), ExtResource( 53 ), ExtResource( 55 ), ExtResource( 5 ), ExtResource( 60 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 45 ), ExtResource( 36 ) ],
+"loop": true,
+"name": "default",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 25 ), ExtResource( 63 ), ExtResource( 28 ), ExtResource( 66 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 68 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 67 ), ExtResource( 65 ), ExtResource( 69 ), ExtResource( 64 ), ExtResource( 27 ) ],
+"loop": false,
+"name": "shrink",
+"speed": 8.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id=3]
+resource_local_to_scene = true
+radius = 300.0
+
+[node name="enemy_boss" instance=ExtResource( 1 )]
+ai_type = "hem"
+uses_lassos = true
+min_hourglasses = 10
+max_hourglasses = 15
+min_loopholes = 10
+max_loopholes = 15
+
+[node name="animated_sprite" parent="." index="0"]
+frames = SubResource( 1 )
+
+[node name="lassoed" parent="." index="1"]
+texture = ExtResource( 62 )
+
+[node name="collision_shape_2d" parent="." index="2"]
+visible = true
+shape = SubResource( 2 )
+
+[node name="collision_shape_2d" parent="aggro" index="0"]
+shape = SubResource( 3 )
+
+[node name="lasso_timer" type="Timer" parent="." index="7"]
+wait_time = 5.0
+one_shot = true
+
+[node name="lasso_delay" type="Timer" parent="." index="8"]
+one_shot = true
